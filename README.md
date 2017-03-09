@@ -59,30 +59,49 @@ user@host:~/.kickoff$ tree
 │   ├── LICENSE
 │   ├── Makefile
 │   ├── README.md
-│   └── TODO.md
+│   ├── TODO.md
+│   ├── main.go
+│   └── zeus
+│       ├── bench.sh
+│       ├── build.sh
+│       ├── clean.sh
+│       ├── install.sh
+│       ├── run.sh
+│       └── test.sh
 ├── haskell
 │   ├── AUTHORS
 │   ├── LICENSE
 │   ├── Makefile
 │   ├── README.md
-│   └── TODO.md
+│   ├── TODO.md
+│   └── main.hs
 └── python
     ├── AUTHORS
     ├── LICENSE
     ├── Makefile
     ├── README.md
-    └── TODO.md
+    ├── TODO.md
+    └── main.py
 
-4 directories, 20 files
+5 directories, 29 files
 ```
 
 ## Build System
 
-KICKOFF uses ZEUS as its build system.
+KICKOFF uses [ZEUS]("github.com/dreadl0ck/zeus) as its build system.
+You can also use the go tools for compilation / installation.
 
 ## Project Stats
 
-
+    -------------------------------------------------------------------------------
+    Language                     files          blank        comment           code
+    -------------------------------------------------------------------------------
+    Go                               2             78             55            225
+    Markdown                         2             31              0            135
+    Bourne Shell                     4              8             12              9
+    -------------------------------------------------------------------------------
+    SUM:                             8            117             67            369
+    -------------------------------------------------------------------------------
 
 ## License
 
