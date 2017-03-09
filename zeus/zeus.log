@@ -1,0 +1,24 @@
+[Thu Mar 9 13:02:49 2017]
+ ________ ____  __ __  ______  __  ___
+ \___   // __ \|  |  \/  ___/  \\/^//^\
+  /    /\  ___/|  |  /\___ \   //  \\ /
+ /_____ \\___  >____//____  >  \\  /^\\
+       \/    \/           \/   /\\/\ //\
+             An Electrifying Build System
+
+Project Name: kickoff
+
+no deadline set.
+no milestones set.
+
+initialized  4  commands in:  593.685µs 
+
+
+zeus » [1/3] executing clean
+zeus » [1/3] finished clean in 9.839981ms 
+
+zeus » [2/3] executing build
+zeus » [2/3] finished build in 258.825509ms 
+
+zeus » [3/3] executing install
+zeus » [3/3] finished install in 515.430546ms 

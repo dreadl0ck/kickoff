@@ -1,0 +1,15 @@
+{
+    "BuildNumber": 0,
+    "Deadline": "",
+    "Milestones": [],
+    "Aliases": {},
+    "Events": {
+        "zeus/zeus_config.json": {
+            "Path": "zeus/zeus_config.json",
+            "Op": 2,
+            "Chain": ""
+        }
+    },
+    "Author": "",
+    "KeyBindings": {}
+}
