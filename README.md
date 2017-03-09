@@ -89,7 +89,7 @@ user@host:~/.kickoff$ tree
 ## Build System
 
 KICKOFF uses [ZEUS]("github.com/dreadl0ck/zeus) as its build system.
-You can also use the go tools for compilation / installation.
+But you can also use the go tools for compilation / installation directly.
 
 ## Project Stats
 
