@@ -1,5 +1,5 @@
 // KICKOFF - Project Bootstrapping Tool
-// Copyright (c) 2017 Philipp Mieden <dreadl0ck@protonmail.ch>
+// Copyright (c) 2017 Philipp Mieden <dreadl0ck [at] protonmail [dot] ch>
 
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -41,6 +41,8 @@ var (
 	directorySeparator = "/"
 )
 
+const debug = false
+
 func init() {
 	// set up the prefixed formatter
 	Log.Formatter = new(prefixed.TextFormatter)
@@ -56,6 +58,10 @@ func main() {
 		ok           bool
 	)
 
+	if debug {
+		Log.Level = logrus.DebugLevel
+	}
+
 	printASCII()
 
 	if runtime.GOOS == "windows" {
@@ -70,9 +76,9 @@ func main() {
 	// handle args
 	switch true {
 	case len(os.Args) < 2:
-		printTemplates()
-		cLog.Fatal("no project name - no project.")
-
+		printHelp()
+	case os.Args[1] == "-h" || os.Args[1] == "help" || os.Args[1] == "-help":
+		printHelp()
 	case len(os.Args) == 3: // template was specified
 		template = os.Args[1]
 		projectDir = os.Args[2]
@@ -91,9 +97,6 @@ func main() {
 
 	cLog.Info("creating project: ", projectDir)
 	copyTemplate(templatePath, projectDir)
-
-	// print overview
-	printTree(projectDir)
 
 	cLog.Info("Happy Coding!")
 	return

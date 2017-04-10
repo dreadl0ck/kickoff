@@ -1,0 +1,21 @@
+buildnumber: 0
+deadline: ""
+milestones: []
+aliases: {}
+events:
+  f8955d8be0d771d3:
+    name: script watcher
+    id: f8955d8be0d771d3
+    path: zeus
+    op: 2
+    fileextension: .sh
+    command: internal
+  fb2b33367cb4e225:
+    name: config watcher
+    id: fb2b33367cb4e225
+    path: zeus/zeus_config.yml
+    op: 2
+    fileextension: .yml
+    command: internal
+author: ""
+keybindings: {}

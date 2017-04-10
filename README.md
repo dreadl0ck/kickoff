@@ -22,7 +22,7 @@ Setup the your new project with one command!
 ## Install
 
 ```shell
-go get -u github.com/kickoff
+go get -u github.com/dreadl0ck/kickoff
 ```
 
 ## Usage
@@ -43,7 +43,7 @@ If you want to automatically initialize a git repository, just create an empty *
 
 ### Configuration Examples
 
-A simple example could look like this:
+A simple template directory could look like this:
 
 ```text
 user@host:~/.kickoff$ tree
@@ -86,9 +86,24 @@ user@host:~/.kickoff$ tree
 5 directories, 29 files
 ```
 
+What you see here are **4** template directories,
+for the python, haskell and go programming languages and one for a default project.
+
+## Usage Examples
+
+Usage is pretty straight forward.
+Here's a simple example for creating a new go project:
+
+```shell
+# bootstrap a new project named testProject
+# use the go template
+$ kickoff go testProject
+...
+```
+
 ## Build System
 
-KICKOFF uses [ZEUS]("github.com/dreadl0ck/zeus) as its build system.
+KICKOFF uses [ZEUS](github.com/dreadl0ck/zeus) as its build system.
 But you can also use the go tools for compilation / installation directly.
 
 ## Project Stats
@@ -107,7 +122,7 @@ But you can also use the go tools for compilation / installation directly.
 
 ```LICENSE
 KICKOFF - Project Bootstrapping Tool
-Copyright (c) 2017 Philipp Mieden <dreadl0ck@protonmail.ch>
+Copyright (c) 2017 Philipp Mieden <dreadl0ck [at] protonmail [dot] ch>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -126,7 +141,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ## Contact
 
 You have ideas, feedback, bugs, security issues, pull requests etc?
-Mail: dreadl0ck@protonmail.ch
+Mail: dreadl0ck [at] protonmail [dot] ch
 
 ```PGP
 -----BEGIN PGP PUBLIC KEY BLOCK-----

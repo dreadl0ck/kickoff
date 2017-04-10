@@ -1,5 +1,5 @@
 // KICKOFF - Project Bootstrapping Tool
-// Copyright (c) 2017 Philipp Mieden <dreadl0ck@protonmail.ch>
+// Copyright (c) 2017 Philipp Mieden <dreadl0ck [at] protonmail [dot] ch>
 
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -31,7 +31,10 @@ import (
  */
 
 func printHelp() {
-	fmt.Println("usage: kickoff [template] <projectName>")
+	println("usage: kickoff [template] <projectName>")
+	println("available templates:")
+	printTemplates()
+	os.Exit(0)
 }
 
 func printTemplates() {
@@ -50,12 +53,14 @@ func printTemplates() {
 	}
 }
 
+// copy a template directory to the new projectDir path
+// if the proijectDir path does not exist it will be created
 func copyTemplate(templatePath, projectDir string) {
 
 	var cLog = Log.WithField("prefix", "copyTemplate")
 
 	// create project directory
-	err := os.Mkdir(projectDir, 0700)
+	err := os.MkdirAll(projectDir, 0700)
 	if err != nil {
 		cLog.WithError(err).Fatal("failed to create project directory")
 	}
@@ -64,6 +69,7 @@ func copyTemplate(templatePath, projectDir string) {
 
 		if path != templatePath { // ignore self
 
+			// Handle git init
 			if strings.HasSuffix(path, ".git") {
 
 				// change directory
@@ -124,7 +130,7 @@ func readConfigDirectory() {
 func copyFile(source, destination string) {
 
 	var cLog = Log.WithField("prefix", "copyFile")
-	cLog.Info(source, " ~> ", destination)
+	cLog.Debug(source, " ~> ", destination)
 
 	// read file contents
 	contents, err := ioutil.ReadFile(source)
@@ -164,7 +170,8 @@ func createFile(name string) {
 
 	var cLog = Log.WithField("prefix", "createFile")
 
-	cLog.Info("creating file: ", name)
+	cLog.Debug("creating file: ", name)
+
 	f, err := os.Create(name)
 	if err != nil {
 		cLog.WithError(err).Fatal("failed to create file: ", name)
@@ -180,61 +187,12 @@ func createDirectory(path string) {
 
 	var cLog = Log.WithField("prefix", "createDirectory")
 
-	cLog.Info("creating directory: ", path)
+	cLog.Debug("creating directory: ", path)
 
 	err := os.Mkdir(path, 0700)
 	if err != nil {
 		cLog.WithError(err).Fatal("failed to create directory: ", path)
 	}
-}
-
-// print directory as a tree structure
-func printTree(dir string) {
-
-	var (
-		cLog            = Log.WithField("prefix", "printTree")
-		files           int
-		dirs            int
-		directoryPhrase = "directories, "
-		filePhrase      = "files"
-		offset          = 4
-	)
-
-	fmt.Println(dir)
-
-	err := filepath.Walk(dir, func(path string, info os.FileInfo, err error) error {
-
-		// skip git dir and self
-		if !strings.Contains(path, ".git") && path != dir {
-
-			path = strings.TrimPrefix(path, dir+"/")
-			level := len(strings.Split(path, directorySeparator)) - 1
-
-			if info.IsDir() {
-				dirs++
-				fmt.Println("└── " + path)
-			} else {
-				files++
-				fmt.Println(fmt.Sprintf("%-"+strconv.Itoa(level*offset)+"s", "") + "├── " + path)
-			}
-		}
-		return nil
-	})
-	if err != nil {
-		cLog.WithError(err).Fatal("failed to walk directory")
-	}
-
-	if dirs == 1 {
-		directoryPhrase = "directory, "
-	}
-
-	if files == 1 {
-		filePhrase = "file"
-	}
-
-	println()
-	fmt.Println(dirs, directoryPhrase, files, filePhrase)
-	println()
 }
 
 // pad the input string up to the given number of space characters
