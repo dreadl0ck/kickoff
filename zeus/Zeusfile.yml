@@ -1,0 +1,16 @@
+commands:
+  build:
+    dependencies: clean
+    description: build the commandline tool
+    exec: go build -o bin/kickoff
+  clean:
+    description: clean up the mess
+    exec: rm -rf test && rm -rf bin/kickoff
+  install:
+    dependencies: build
+    description: build and install to $PATH
+    exec: go install
+  test:
+    dependencies: clean
+    description: create a new test project from the default template
+    exec: go install && kickoff test

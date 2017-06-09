@@ -17,7 +17,8 @@
 KICKOFF is a commandline tool for quick and easy project bootstrapping.
 
 Have an amazing idea and want to dive straight into coding?
-Setup the your new project with one command!
+
+Setup your new project with one command!
 
 ## Install
 
@@ -141,7 +142,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ## Contact
 
 You have ideas, feedback, bugs, security issues, pull requests etc?
-Mail: dreadl0ck [at] protonmail [dot] ch
+
+Contact me: dreadl0ck [at] protonmail [dot] ch
 
 ```PGP
 -----BEGIN PGP PUBLIC KEY BLOCK-----

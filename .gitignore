@@ -1,3 +1,4 @@
 test
 bin/*
-error_dump.sh
+zeus/error_dump.sh
+zeus/.history
