@@ -104,7 +104,7 @@ $ kickoff go testProject
 
 ## Build System
 
-KICKOFF uses [ZEUS](github.com/dreadl0ck/zeus) as its build system.
+KICKOFF uses [ZEUS](https://www.github.com/dreadl0ck/zeus) as its build system.
 But you can also use the go tools for compilation / installation directly.
 
 ## Project Stats
