@@ -20,6 +20,13 @@ Have an amazing idea and want to dive straight into coding?
 
 Setup your new project with one command!
 
+Demo:
+
+<p align="center">
+<a href="https://asciinema.org/a/124305" target="_blank">
+<img src="https://github.com/dreadl0ck/kickoff/blob/master/files/kickoff.jpg" /></a>
+</p>
+
 ## Install
 
 ```shell
